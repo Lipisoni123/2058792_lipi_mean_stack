@@ -1,0 +1,42 @@
+h1 {
+    background-color: aquamarine;
+    font: size 300px;
+    text-align: center;
+}
+h2 {
+    background-color: royalblue;
+    font: size 200px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:Left;
+}
+h3 {
+    background-color:pink;
+    font: size 100px;
+    text-align:Right;
+}
+p {
+    background-color:yellowgreen;
+    font: size 60px;
+    
+}
+div {
+    
+    font: size 50px;
+    text-align: center;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+
+  .footer{
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
