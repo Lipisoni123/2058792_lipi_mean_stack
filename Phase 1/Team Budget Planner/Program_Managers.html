@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = new Array();
+        function addNewBudget() {
+            getData();
+            arr.push({
+                client_name: document.getElementById("client_name").value,
+                project_name: document.getElementById("project_name").value,
+                budget_amount: document.getElementById("budget_amount").value,
+            });
+            localStorage.setItem("localData", JSON.stringify(arr));
+            location.href = "Annual_Budget.html";
+        }
+
+        function deleteData() {
+            localStorage.clear()
+        }
+        function getData() {
+            var str = localStorage.getItem("localData");
+            if (str != null)
+                arr = JSON.parse(str);
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;text-decoration-color: blue;color: blue;">Add New Budget </h1>
+    <form
+        style="font-weight:bolder;font-size: large;font-family: 'Times New Roman', Times, serif;text-align: center;text-decoration-color: crimson; color:rgba(155, 11, 184, 0.397); border:darkgoldenrod;  border-color:darkgoldenrod; border-width: 5px; border-style:solid;"
+        onsubmit="addNewBudget (); return false;" required>
+        <label> Client Name: </label>&nbsp;&nbsp;&nbsp;<input type="text" id="client_name" required /><br /><br /><br />
+        <label>Project Name: </label>&nbsp;&nbsp;&nbsp;<input type="text" id="project_name"
+            required /><br /><br /><br />
+        <label> Budget Amount: </label>&nbsp;<input type="number" id="budget_amount" required /><br /><br /><br />
+
+        <input type="submit" value="Add" />
+        <input type="reset" value="Clear" />
+        <!-- <input type="button" value="Delete localstorage" onclick="deleteData();" /> -->
+    </form><br />
+    <div style="text-align: center">
+        <a href="Main_Page.html" style=" background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  ">Back </a>
+    </div>
+
+</body>
+
+</html>

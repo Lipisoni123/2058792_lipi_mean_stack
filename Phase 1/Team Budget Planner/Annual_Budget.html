@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            showData();
+        };
+        function showData() {
+            getData();
+
+
+            var tbl = document.getElementById("annualBudgetTable");
+
+            var x = tbl.rows.length;
+            while (--x) {
+                tbl.deleteRow(x)
+            }
+            for (i = 0; i < arr.length; i++) {
+                var row = tbl.insertRow();
+                var cell1 = row.insertCell();
+                var cell2 = row.insertCell();
+                var cell3 = row.insertCell();
+                cell1.innerHTML = arr[i].client_name;
+                cell2.innerHTML = arr[i].project_name;
+                cell3.innerHTML = arr[i].budget_amount;
+                cell3.className = "countable";
+
+            }
+            computeSum();
+        }
+        function getData() {
+
+            var str = localStorage.getItem("localData");
+            if (str != null)
+                arr = JSON.parse(str);
+        }
+        function computeSum() {
+            var cls = document.getElementById("annualBudgetTable").getElementsByTagName("td");
+            var sum = 0;
+            for (var i = 0; i < cls.length; i++) {
+                if (cls[i].className == "countable") {
+                    sum += isNaN(cls[i].innerHTML) ? 0 : parseInt(cls[i].innerHTML);
+                }
+            }
+            let divElement = document.createElement('div');
+
+            // create text node
+            let divElementText = document.createTextNode('Total Budget of the Project is: ' + sum);
+
+            // append text node to div
+            divElement.appendChild(divElementText);
+
+            // append div element to document
+            document.body.appendChild(divElement);
+            //alert('sum is ' + sum);
+        }
+    </script>
+</head>
+
+<body style="max-width:500px;margin:auto">
+    <h1 style="text-align: center;text-decoration-color: blue;color: blue;">Annual Budget </h1>
+    <table border=1 id="annualBudgetTable" style="border-style: solid; border-color: darkgreen; align-items: center; border-width: 5px;font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;">
+
+        <tr style=" background-color: #dddddd">
+            <th style=" border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;"> Client Name</td>
+            <th style=" border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;">Project Name</td>
+            <th style=" border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;">Budget</td>
+        </tr>
+    </table>
+    <div style="text-align: center">
+        <a href="Program_Managers.html" style=" background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  ">Back </a>
+    </div>
+</body>
+
+</html>
