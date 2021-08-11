@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Travel Blog</title>
+    <meta name="description" content="A blog website about travelling">
+    <meta name="author" content="Lipi Soni">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="blogging.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="blog.js"></script>
+    <style>
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="#" class="logo">Travel Diary</a>
+        <main class="container">
+            <div class="custom-container">
+            </div>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="#" class="nav-links">Home</a>
+                </li>
+                <li>
+                    <a href="pages/AboutUsComponent.html" class="nav-links">About Us</a>
+                </li>
+                <li>
+                    <a href="pages/BlogsComponent.html" class="nav-links">Blogs</a>
+                </li>
+                <li>
+                    <a href="pages/Contact.html" class="nav-links">Contact</a>
+                </li>
+                <li>
+                    <a href="pages/AddBlog.html" class="nav-links">Add Blog</a>
+                </li>
+            </ul>
+    </nav>
+
+
+
+
+    <div class="container" id="link">
+        <form class="form-group"></form>
+        <div class="row">
+            <div class="col-4">
+                <h3 style="text-align: center;color: black;font-family: sans-serif;padding-bottom: 10px;">Add Articles
+                </h3>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-4" style="text-align: center;color: black;font-family: sans-serif;">Title : </div>
+            <div class="col-4"><input type="text" id="title" /></div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-4" style="text-align: center; font-style: italic; color: black;font-family: sans-serif;">
+                Blog Area :</div>
+            <div class="col-4" style="margin-top: 10px;"><textarea name="blog" id="blog" cols="22" rows="5"></textarea>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-4" style="text-align: center;font-style: italic; color: black;font-family: sans-serif;">
+                First Image : </div>
+            <div class="col-4"><input type="url" id="image" /></div>
+
+        </div>
+
+
+
+        <div class="row" style=" margin-top: 10px; margin-bottom: 10px;">
+
+            <div class="col-4" style="text-align: center;"> <input type="button" value="Submit" class="btn btn-dark"
+                    onclick="addData()" /></div>
+            <div class="col-4" style="text-align: left;"> <input type="button" value="Clear" class="btn btn-dark"
+                    onclick="reset(title,blog,image)" /></div>
+        </div>
+
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div class="container" id="view">
+        <div class="row align-items-center">
+
+            <div class="col-4"></div>
+
+            <div class="col-4" id="main"></div>
+            <div class="col-4"></div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
