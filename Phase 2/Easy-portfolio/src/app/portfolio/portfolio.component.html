@@ -1,0 +1,58 @@
+<div *ngIf="loginFlag">
+    <h2 style="text-align: center;">Login Page</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <label>Username: </label>
+        <input type="text" formControlName="username"><br><br>
+        <label>Password: </label>
+        <input type="password" formControlName="pass"><br><br>
+        <input type="submit" value="Login" [disabled]="loginRef.invalid">
+    </form>
+    <br>
+    <button (click)="signUpFlag=true; loginFlag=false">Sign Up</button>
+    <br>
+    {{msg}}
+</div>
+
+<div *ngIf="signUpFlag">
+    <h2 style="text-align: center;">Registration Page</h2>
+    <form [formGroup]="regRef" (ngSubmit)="saveUser()">
+        <label>First Name: </label>
+        <input type="text" formControlName="fname"><br><br>
+        <label>Last Name: </label>
+        <input type="text" formControlName="lname"><br><br>
+        <label>Username: </label>
+        <input type="text" formControlName="username"><br><br>
+        <label>Password: </label>
+        <input type="password" formControlName="pass"><br><br>
+        <input type="submit" value="Register" [disabled]="regRef.invalid">
+        <input type="reset" value="Reset">
+    </form>
+    <br>
+    <button (click)="signUpFlag=false; loginFlag=true">Back to Login</button>
+</div>
+
+<div *ngIf="portfolioFlag">
+    <h2 style="text-align: center;">My Portfolio</h2>
+    <h3>Welcome {{user}}!</h3>
+    <form [formGroup]="contactRef" (ngSubmit)="saveContact()">
+        <label>Contact Name: </label>
+        <input type="text" formControlName="name"><br>
+        <label>Phone Number: </label>
+        <input type="text" formControlName="pNum"><br>
+        <input type="submit" value="Save Contact" [disabled]="contactRef.invalid">
+    </form>
+    <h3>Contact Details</h3>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        <tr *ngFor="let contact of contactData">
+            <td>{{contact.name}}</td>
+            <td>{{contact.pNum}}</td>
+        </tr>
+    </table>
+
+    <br>
+    <button (click)="portfolioFlag=false; loginFlag=true;">Logout</button>
+</div>
