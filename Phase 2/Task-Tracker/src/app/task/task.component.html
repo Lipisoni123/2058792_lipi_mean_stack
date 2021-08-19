@@ -1,0 +1,32 @@
+<h1 style="text-align: center;"><u>Task Tracker</u></h1>
+
+<h2><u>Input Task Details:</u></h2>
+<form [formGroup]="detail" (ngSubmit)="storedetail()">
+    <label>Emp Id: </label>
+    <input type="text" formControlName="id"><br /><br />
+    <label>Name: </label>
+    <input type="text" formControlName="name"><br /><br />
+    <label>Task: </label>
+    <input type="text" formControlName="task"><br /><br />
+    <label>Deadline: </label>
+    <input type="date" formControlName="dl"><br /><br />
+    <input type="submit" value="Save" [disabled]="detail.invalid">
+    <input type="reset" value="Reset">
+</form>
+<h3>Task Table:</h3>
+<table border="1">
+    <tr>
+        <th>Emp Id</th>
+        <th>Name</th>
+        <th>Task</th>
+        <th>Deadline</th>
+    </tr>
+    <tr *ngFor="let details of Taskdata">
+        <td>{{details.id}}</td>
+        <td>{{details.name}}</td>
+        <td>{{details.task}}</td>
+        <td>{{details.dl}}</td>
+    </tr>
+</table>
+
+<br>
