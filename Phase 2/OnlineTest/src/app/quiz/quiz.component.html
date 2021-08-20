@@ -1,0 +1,21 @@
+<div *ngIf="showQ">
+    <h2>Answer the following questions:</h2>
+    <form #examRef="ngForm" (ngSubmit)="submit(examRef)">
+        <div *ngFor="let q of questions; index as i">
+            <p>Q{{i+1}}.{{q.question}}</p>
+            <input type="radio" name=q{{i+1}} value={{q.ans1}} ngModel />A.{{q.ans1}}<br />
+            <input type="radio" name=q{{i+1}} value={{q.ans2}} ngModel />B.{{q.ans2}}<br />
+            <input type="radio" name=q{{i+1}} value={{q.ans3}} ngModel />C.{{q.ans3}}<br />
+            <input type="radio" name=q{{i+1}} value={{q.ans4}} ngModel />D.{{q.ans4}}<br />
+        </div>
+        <p style="color:red">{{msg}}</p>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+<div *ngIf="showRes">
+    <h2>Results:</h2>
+    <div [innerHTML]="Results"></div>
+    <div [innerHTML]="scoreMsg"></div>
+</div>
