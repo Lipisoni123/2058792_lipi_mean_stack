@@ -1,0 +1,130 @@
+[
+    {
+        "CustomerFirstname": "Test",
+        "CustomerlastName": "Test Last Name",
+        "Customergender": "Male",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Tes",
+        "CustomerlastName": "tes",
+        "Customergender": "test",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Lipi",
+        "CustomerlastName": "Soni",
+        "Customergender": "female",
+        "Customeremail": "lipi@soni"
+    },
+    {
+        "CustomerFirstname": "Harshal",
+        "CustomerlastName": "Shah",
+        "Customergender": "male",
+        "Customeremail": "harshal@shah"
+    },
+    {
+        "CustomerFirstname": "sweta",
+        "CustomerlastName": "soni",
+        "Customergender": "female",
+        "Customeremail": "sweta@soni"
+    },
+    {
+        "CustomerFirstname": "vishant",
+        "CustomerlastName": "shah",
+        "Customergender": "male",
+        "Customeremail": "vishant@shah"
+    }
+][
+    {
+        "CustomerFirstname": "Test",
+        "CustomerlastName": "Test Last Name",
+        "Customergender": "Male",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Tes",
+        "CustomerlastName": "tes",
+        "Customergender": "test",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Lipi",
+        "CustomerlastName": "Soni",
+        "Customergender": "female",
+        "Customeremail": "lipi@soni"
+    },
+    {
+        "CustomerFirstname": "Harshal",
+        "CustomerlastName": "Shah",
+        "Customergender": "male",
+        "Customeremail": "harshal@shah"
+    },
+    {
+        "CustomerFirstname": "sweta",
+        "CustomerlastName": "soni",
+        "Customergender": "female",
+        "Customeremail": "sweta@soni"
+    },
+    {
+        "CustomerFirstname": "vishant",
+        "CustomerlastName": "shah",
+        "Customergender": "male",
+        "Customeremail": "vishant@shah"
+    },
+    {
+        "CustomerFirstname": "Lipi",
+        "CustomerlastName": "Soni",
+        "Customergender": "female",
+        "Customeremail": "lipi@soni"
+    }
+][
+    {
+        "CustomerFirstname": "Test",
+        "CustomerlastName": "Test Last Name",
+        "Customergender": "Male",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Tes",
+        "CustomerlastName": "tes",
+        "Customergender": "test",
+        "Customeremail": "test@test.com"
+    },
+    {
+        "CustomerFirstname": "Lipi",
+        "CustomerlastName": "Soni",
+        "Customergender": "female",
+        "Customeremail": "lipi@soni"
+    },
+    {
+        "CustomerFirstname": "Harshal",
+        "CustomerlastName": "Shah",
+        "Customergender": "male",
+        "Customeremail": "harshal@shah"
+    },
+    {
+        "CustomerFirstname": "sweta",
+        "CustomerlastName": "soni",
+        "Customergender": "female",
+        "Customeremail": "sweta@soni"
+    },
+    {
+        "CustomerFirstname": "vishant",
+        "CustomerlastName": "shah",
+        "Customergender": "male",
+        "Customeremail": "vishant@shah"
+    },
+    {
+        "CustomerFirstname": "Lipi",
+        "CustomerlastName": "Soni",
+        "Customergender": "female",
+        "Customeremail": "lipi@soni"
+    },
+    {
+        "CustomerFirstname": "Harshal",
+        "CustomerlastName": "Shah",
+        "Customergender": "male",
+        "Customeremail": "harshal@shah"
+    }
+]
