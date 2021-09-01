@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/Javascript">
+        function grabTime(){
+            let time = new Date();
+            let hours = time.getHours();
+            let am_pm="";
+            if(hours<12){
+                am_pm="AM";
+                if(hours==0) hours=12;
+            }
+            else{
+                am_pm="PM";
+                hours-=12;
+            }
+            let minutes = time.getMinutes();
+            if(minutes<10) minutes="0"+String(minutes);
+            let statedTime = "("+hours+":"+minutes+" "+am_pm+") ";
+            return statedTime;
+        };
+
+
+        var socket=io();
+
+        socket.on("startup",(start)=> {
+            document.getElementById("chat").innerHTML+=grabTime()+"Server Says: "+start+"<br/>";
+        });
+        
+        function send_message(){
+            let msg = document.getElementById("client_message").value;
+            let name = document.getElementById("client_name").value;
+            if(name=="") name="Client";
+            document.getElementById("chat").innerHTML+=grabTime()+name+" Says: "+msg+"<br/>";
+            let completeMessage = [name,msg];
+            socket.emit("Client_Message",completeMessage);
+            document.getElementById("client_message").value="";
+        };
+
+        socket.on("Server_Message",(server)=> {
+            document.getElementById("chat").innerHTML+=grabTime()+"Server Says: "+server+"<br/>";
+        });
+        
+    </script>
+</head>
+
+<body>
+    <h2> Chatting With Socket.IO</h2>
+
+    <div id="chat"></div>
+    <b>Chatting History</b><br />
+    </div><br /><br />
+    <label class="UI">Name: </label><input type="text" id="client_name" /><br /><br />
+    <label class="UI">Message:</label><br />
+    <textarea id="client_message" class="UI" style="width: 90%;"></textarea><br /><br />
+    <input type="button" value="Send" class="UI" onclick="send_message()" />
+    </div>
+</body>
+
+</html>
