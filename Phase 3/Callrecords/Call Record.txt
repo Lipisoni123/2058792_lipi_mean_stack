@@ -1,0 +1,4 @@
+1> Mongod ->To connect with MongoDB Server
+2> Mongo ->Open another Terminal 
+3> db.createCollection("calldata"); ->To create collection
+4> db.calldata.insertMany([ {....data...}])
