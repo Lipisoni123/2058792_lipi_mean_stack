@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-Log</title>
+    <style>
+        a {
+            font-size: 25px;
+        }
+    </style>
+    <script>
+        let ws = new WebSocket("ws://localhost:9090");
+        ws.onopen = () => {
+            ws.send("Hello, Welcome to Web Socket App");
+            details = () => {
+                chatadd();
+                let textmsg = document.getElementById("id").value;
+                ws.send(textmsg);
+                document.getElementById("id").value = "";
+                var user = document.getElementById("username").value;
+                var chat = document.getElementById("textbox");
+                var addtext = document.createTextNode(user + ": " + textmsg);
+                chat.appendChild(addtext);
+                var br = document.createElement("br");
+                chat.appendChild(br);
+                ws.onmessage = (textmsg) => {
+                    var server = document.getElementById("textbox");
+                    var addtext = document.createTextNode("Server: " + textmsg.data);
+                    server.appendChild(addtext);
+                    var br = document.createElement("br");
+                    textbox.appendChild(br);
+                }
+            }
+        }
+        let chatadd = async () => {
+            await fetch('/api/chat/save', {
+                method: 'POST',
+                body: JSON.stringify(userinsert()),
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+        }
+        let userinsert = () => {
+            let input = {}
+            document.querySelectorAll('input').forEach(details => { input[details.name] = details.value })
+            return input
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;font-size: 40px;">Chat Log</h1>
+    <label style="color:black; font-size: 30px;">Name:</label><br>
+    <input style="border-color: black;border-width: 3px; font-size: 30px;" type="text" class="form-control"
+        id="username" name="username" placeholder="Write your name"><br><br>
+    <form class="form-group">
+        <label style="color:black;font-size: 30px;">Message:</label><br>
+        <input style="border-color: black;border-width: 3px; font-size: 30px; width: 1500px;height: 70px;" type="text"
+            class="form-control" id="id" name="message" placeholder="Start typing your message"><br><br>
+        <button style="font-size: 30px;" type="button" class="btn btn-primary"
+            style="font-family:Arial, Helvetica, sans-serif" onclick=details() id="blogBtn">Send</button>
+    </form>
+    <br>
+    <a id="server"></a>
+    <a id="textbox"></a>
+</body>
+
+</html>
